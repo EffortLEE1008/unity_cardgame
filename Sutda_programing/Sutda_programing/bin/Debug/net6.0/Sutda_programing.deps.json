@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Sutda_programing/1.0.0": {
+        "runtime": {
+          "Sutda_programing.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Sutda_programing/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
