@@ -1,0 +1,28 @@
+<mxfile host="app.diagrams.net" modified="2023-04-25T10:02:12.783Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="qeAVeSep_ehA19xT75ub" version="21.1.9" type="device">
+  <diagram name="페이지-1" id="M00KFu75AIdlWuPv9bby">
+    <mxGraphModel dx="722" dy="519" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wF_jVjKiOb30Yhi6PBNW-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wF_jVjKiOb30Yhi6PBNW-1" target="wF_jVjKiOb30Yhi6PBNW-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wF_jVjKiOb30Yhi6PBNW-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;카드를 특정 위치로 움직인다.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="130" width="320" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="wF_jVjKiOb30Yhi6PBNW-2" value="&lt;font style=&quot;font-size: 21px;&quot;&gt;랜덤하게 카드를 뽑는다&lt;/font&gt;." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="380" width="320" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="wF_jVjKiOb30Yhi6PBNW-3" value="&lt;font style=&quot;font-size: 32px;&quot;&gt;배팅한다.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="235" y="630" width="310" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="wF_jVjKiOb30Yhi6PBNW-6" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="wF_jVjKiOb30Yhi6PBNW-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="389" y="550" as="sourcePoint" />
+            <mxPoint x="439" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
