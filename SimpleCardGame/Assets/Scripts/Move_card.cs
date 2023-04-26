@@ -9,8 +9,8 @@ public class Move_card : MonoBehaviour
     Vector2 my_position;
     Vector2 goal_position;
 
-    
-    public GameObject goal;
+    [SerializeField]
+    GameObject goal;
 
     
 
