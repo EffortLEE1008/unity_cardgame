@@ -25,10 +25,7 @@ public class Move_card : MonoBehaviour
 
         
 
-        Debug.Log("my_position : " + my_position);
-        Debug.Log("goal_position : " + goal_position);
-        Debug.Log("changeposition : " + next_position);
-        Debug.Log("next_position¿« normal : " + next_position.normalized);
+ 
 
     }
 

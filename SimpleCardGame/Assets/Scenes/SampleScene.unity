@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 60649766}
   m_Layer: 0
-  m_Name: Target (3)
+  m_Name: Target4
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124499129
 GameObject:
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 124499133}
   - component: {fileID: 124499134}
   m_Layer: 0
-  m_Name: My_card
+  m_Name: My_card1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,12 +214,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 810842126, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.2505496, y: 3.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -232,13 +232,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124499129}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.38, y: -6.31, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.73, y: -6.4, z: 0}
   m_LocalScale: {x: 2.003755, y: 2.2256, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &124499133
 Rigidbody2D:
@@ -284,7 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 329789212}
   m_Layer: 0
-  m_Name: Target
+  m_Name: Target1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -315,7 +315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 393080791}
   m_Layer: 0
-  m_Name: Target (4)
+  m_Name: Target5
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -334,7 +334,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -575,7 +575,7 @@ GameObject:
   m_Component:
   - component: {fileID: 643415034}
   m_Layer: 0
-  m_Name: Target (1)
+  m_Name: Target2
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -594,7 +594,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782714982
 GameObject:
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 782714984}
   - component: {fileID: 782714983}
   m_Layer: 0
-  m_Name: My_card (3)
+  m_Name: My_card4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -690,7 +690,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1133835641, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -709,7 +709,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782714982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.38, y: -6.31, z: 0}
+  m_LocalPosition: {x: 12.46, y: -6.49, z: 0}
   m_LocalScale: {x: 2.003755, y: 2.2256, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 913385201}
   - component: {fileID: 913385200}
   m_Layer: 0
-  m_Name: My_card (2)
+  m_Name: My_card3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -810,7 +810,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1310034768, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -829,7 +829,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913385199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.38, y: -6.31, z: 0}
+  m_LocalPosition: {x: 7.94, y: -6.49, z: 0}
   m_LocalScale: {x: 2.003755, y: 2.2256, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -849,7 +849,7 @@ GameObject:
   - component: {fileID: 968127090}
   - component: {fileID: 968127089}
   m_Layer: 0
-  m_Name: My_card (1)
+  m_Name: My_card2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -930,7 +930,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -2097815076, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -949,7 +949,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968127088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.38, y: -6.31, z: 0}
+  m_LocalPosition: {x: 3.14, y: -6.44, z: 0}
   m_LocalScale: {x: 2.003755, y: 2.2256, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -966,7 +966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1021602280}
   m_Layer: 0
-  m_Name: Target (2)
+  m_Name: Target3
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -985,7 +985,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1580393403
 GameObject:
@@ -1016,12 +1016,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f67cc34cdbdf754db1556c8a40f1617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  card1: {fileID: 124499129}
+  card2: {fileID: 968127088}
+  card3: {fileID: 913385199}
+  card4: {fileID: 782714982}
+  card5: {fileID: 1792574973}
+  my_sprites:
+  - {fileID: 222658026, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -1133065827, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 1507483511, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -114571175, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 1378959343, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
 --- !u!4 &1580393405
 Transform:
   m_ObjectHideFlags: 0
@@ -1050,7 +1055,7 @@ GameObject:
   - component: {fileID: 1792574975}
   - component: {fileID: 1792574974}
   m_Layer: 0
-  m_Name: My_card (4)
+  m_Name: My_card5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1131,7 +1136,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 615103900, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1150,7 +1155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792574973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.38, y: -6.31, z: 0}
+  m_LocalPosition: {x: 17.23, y: -6.53, z: 0}
   m_LocalScale: {x: 2.003755, y: 2.2256, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
