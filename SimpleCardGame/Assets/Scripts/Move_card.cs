@@ -36,12 +36,12 @@ public class Move_card : MonoBehaviour
     void Update()
     {
 
-        next_position = goal_position - transform.position;
+        next_position = goal.transform.position- transform.position;
         //transform.position = transform.position + goal_position.normalized * Time.deltaTime;
         //transform.position = transform.position + next_position.normalized * Time.deltaTime;
 
         //my_rigid.MovePosition(transform.position + next_position.normalized *15* Time.deltaTime);
-        transform.position = Vector3.MoveTowards(transform.position, goal_position, 3 * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, goal.transform.position, 3 * Time.deltaTime);
 
     }
 
