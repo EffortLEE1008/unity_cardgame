@@ -72,7 +72,7 @@ if((mycard_onlynum[0]==6) && (mycard_onlynum[1]==10) && (mycard_onlynum[2] == 11
 
 bool isstraight = false;
 
-//stright 확인 : 정렬 후 i +1의 숫자가 현재 i와 같다면 true 한번이라도 같지않다면 false 후 break
+//stright 확인 : 정렬 후 i +1의 숫자가 현재 i와 차이가 1이 나면  true//만약 한번이라도 같지않다면 false 후 break
 for (int i = 0; i < mycard_onlynum.Count-1; i++)
 {
     if(mycard_onlynum[i+1] - mycard_onlynum[i] == 1)
