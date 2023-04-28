@@ -54,11 +54,14 @@ mycard_onlyshape.Sort();
 bool isflush = false;
 bool ismount = false;
 
+//플러쉬 인지 확인 : 정렬 후 맨앞카드와 맨뒷카드가 같으면 플러쉬
 if (mycard_onlyshape[0]== mycard_onlyshape[mycard_onlyshape.Count - 1])
 {
     isflush = true;
 }
 
+
+// 마운틴 확인 : 정렬 후  A 10 J Q K 라면 마운틴 
 if((mycard_onlynum[0]==6) && (mycard_onlynum[1]==10) && (mycard_onlynum[2] == 11)&&
     (mycard_onlynum[3] == 12) && (mycard_onlynum[4] == 13))
 {
@@ -69,7 +72,7 @@ if((mycard_onlynum[0]==6) && (mycard_onlynum[1]==10) && (mycard_onlynum[2] == 11
 
 bool isstraight = false;
 
-
+//stright 확인 : 정렬 후 i +1의 숫자가 현재 i와 같다면 true 한번이라도 같지않다면 false 후 break
 for (int i = 0; i < mycard_onlynum.Count-1; i++)
 {
     if(mycard_onlynum[i+1] - mycard_onlynum[i] == 1)
@@ -85,6 +88,7 @@ for (int i = 0; i < mycard_onlynum.Count-1; i++)
 
 }
 
+//paircount = 원페어 : 1, 투페어 : 2, 트리플 : 3 , 플러쉬 : 4, 포카드 :6 
 int paircount = 0;
 
 for(int i =0; i<mycard_onlynum.Count-1; i++)
