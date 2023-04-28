@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,27 +6,21 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     
-    public GameObject card1;
-    public GameObject card2;
-    public GameObject card3;
-    public GameObject card4;
-    public GameObject card5;
 
     [SerializeField]
     GameObject[] card_array; 
 
-
-    SpriteRenderer card1_renderer;
-    SpriteRenderer card2_renderer;
-    SpriteRenderer card3_renderer;
-    SpriteRenderer card4_renderer;
-    SpriteRenderer card5_renderer;
 
     [SerializeField]
     SpriteRenderer[] sr_array;
     
 
     public Sprite[] my_sprites;
+
+    bool isflush = false;
+    bool ismount = false;
+    bool isstraight = false;
+    int paircount = 0;
 
     List<string> card_list = new List<string>();
     List<int> card_list_numonly = new List<int>();
@@ -43,51 +38,15 @@ public class GameManager : MonoBehaviour
             card_list_shapeonly.Add(sr_array[i].sprite.name.Substring(2, 1));
         }
 
+        card_list_numonly.Sort();
+        card_list_shapeonly.Sort();
 
 
-        card1_renderer = card1.GetComponent<SpriteRenderer>();
-        card1_renderer.sprite = my_sprites[0];
 
-        //리스트에추가
-        card_list.Add(card1_renderer.sprite.name);
-        card_list_numonly.Add(int.Parse(card1_renderer.sprite.name.Substring(0, 2)));
-        card_list_shapeonly.Add(card1_renderer.sprite.name.Substring(2, 1));
-
-
-        card2_renderer = card2.GetComponent<SpriteRenderer>();
-        card2_renderer.sprite = my_sprites[1];
-
-        card_list.Add(card2_renderer.sprite.name);
-        card_list_numonly.Add(int.Parse(card2_renderer.sprite.name.Substring(0, 2)));
-        card_list_shapeonly.Add(card2_renderer.sprite.name.Substring(2, 1));
-
-
-        card3_renderer = card3.GetComponent<SpriteRenderer>();
-        card3_renderer.sprite = my_sprites[2];
-
-        card_list.Add(card3_renderer.sprite.name);
-        card_list_numonly.Add(int.Parse(card3_renderer.sprite.name.Substring(0, 2)));
-        card_list_shapeonly.Add(card3_renderer.sprite.name.Substring(2, 1));
-
-
-        card4_renderer = card4.GetComponent<SpriteRenderer>();
-        card4_renderer.sprite = my_sprites[3];
-        card_list.Add(card4_renderer.sprite.name);
-        card_list_numonly.Add(int.Parse(card4_renderer.sprite.name.Substring(0, 2)));
-        card_list_shapeonly.Add(card4_renderer.sprite.name.Substring(2, 1));
-
-
-        card5_renderer = card5.GetComponent<SpriteRenderer>();
-        card5_renderer.sprite = my_sprites[4];
-
-        card_list.Add(card5_renderer.sprite.name);
-        card_list_numonly.Add(int.Parse(card5_renderer.sprite.name.Substring(0, 2)));
-        card_list_shapeonly.Add(card5_renderer.sprite.name.Substring(2, 1));
+        Batting();
 
         Debug.Log(card_list[0] + " " + card_list[1] + " " + card_list[2] + " "
             + card_list[3]+ " " + card_list[4]);
-
-
 
 
     }
@@ -96,5 +55,106 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+
+
+    void Batting()
+    {
+        if (card_list_shapeonly[0] == card_list_shapeonly[card_list_shapeonly.Count - 1])
+        {
+            isflush = true;
+        }
+
+        if ((card_list_numonly[0] == 6) && (card_list_numonly[1] == 10) && (card_list_numonly[2] == 11) &&
+            (card_list_numonly[3] == 12) && (card_list_numonly[4] == 13))
+        {
+            ismount = true;
+
+        }
+
+        for (int i = 0; i < card_list_numonly.Count - 1; i++)
+        {
+            if (card_list_numonly[i + 1] - card_list_numonly[i] == 1)
+            {
+                isstraight = true;
+
+            }
+            else
+            {
+                isstraight = false;
+                break;
+            }
+
+        }
+
+
+        for (int i = 0; i < card_list_numonly.Count - 1; i++)
+        {
+            for (int j = i + 1; j < card_list_numonly.Count; j++)
+            {
+
+
+                if (card_list_numonly[i] == card_list_numonly[j])
+                {
+                    paircount++;
+
+                }
+
+            }
+
+        }
+
+
+        if (isflush && ismount)
+        {
+            Debug.Log("축하합니다. 로티플이에요");
+        }
+        else if (isflush && isstraight)
+        {
+            Debug.Log("축하합니다 스트레이트 플러쉬에요");
+        }
+        else if (paircount == 6)
+        {
+            Debug.Log("축하합니다 포카드입니다.");
+        }
+        else if (paircount == 4)
+        {
+            Debug.Log("축하합니다 풀하우스에요.");
+        }
+        else if (isflush)
+        {
+            Debug.Log("축하합니다 플러쉬에요");
+        }
+        else if (ismount)
+        {
+            Debug.Log("축하합니다 마운틴입니다.");
+        }
+        else if (isstraight)
+        {
+            Debug.Log("축하합니다 스트레이트입니다.");
+        }
+        else if (paircount == 3)
+        {
+            Debug.Log("축하합니다 트리플입니다.");
+        }
+        else if (paircount == 2)
+        {
+            Debug.Log("아쉽네요 투페어");
+        }
+        else if (paircount == 1)
+        {
+            Debug.Log("아쉽네요 원페어");
+        }
+        else
+        {
+            Debug.Log("아무것도 아닌 탑카드에요");
+        }
+
+
+
+
+
     }
 }

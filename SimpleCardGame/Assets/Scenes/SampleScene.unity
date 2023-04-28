@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 124499133}
   - component: {fileID: 124499134}
   m_Layer: 0
-  m_Name: My_card1
+  m_Name: My_card0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 782714984}
   - component: {fileID: 782714983}
   m_Layer: 0
-  m_Name: My_card4
+  m_Name: My_card3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 913385201}
   - component: {fileID: 913385200}
   m_Layer: 0
-  m_Name: My_card3
+  m_Name: My_card2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,7 +849,7 @@ GameObject:
   - component: {fileID: 968127090}
   - component: {fileID: 968127089}
   m_Layer: 0
-  m_Name: My_card2
+  m_Name: My_card1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1016,20 +1016,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f67cc34cdbdf754db1556c8a40f1617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card1: {fileID: 124499129}
-  card2: {fileID: 968127088}
-  card3: {fileID: 913385199}
-  card4: {fileID: 782714982}
-  card5: {fileID: 1792574973}
+  card_array:
+  - {fileID: 124499129}
+  - {fileID: 968127088}
+  - {fileID: 913385199}
+  - {fileID: 782714982}
+  - {fileID: 1792574973}
   sr_array:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   my_sprites:
-  - {fileID: 222658026, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
-  - {fileID: -1133065827, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
-  - {fileID: 1507483511, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 810842126, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -485039546, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -1911703267, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -114571175, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 1687844656, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 598196095, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -485039546, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 401102650, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -81794378, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 1045567780, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -1888205454, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -1911703267, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -452366416, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
   - {fileID: -114571175, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
   - {fileID: 1378959343, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
-  - {fileID: 1378959343, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 1456712247, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 1687844656, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -1813672246, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -1295392030, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -440698792, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 222658026, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 106415141, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -1283390200, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -392521072, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -1133065827, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -1578060093, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 1563092056, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 223782233, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 1507483511, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 28718305, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -1194462431, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: -1598413961, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
 --- !u!4 &1580393405
 Transform:
   m_ObjectHideFlags: 0
@@ -1058,7 +1089,7 @@ GameObject:
   - component: {fileID: 1792574975}
   - component: {fileID: 1792574974}
   m_Layer: 0
-  m_Name: My_card5
+  m_Name: My_card4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

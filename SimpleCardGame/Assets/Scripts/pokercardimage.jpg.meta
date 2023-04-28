@@ -339,7 +339,7 @@ TextureImporter:
       name: 12h
       rect:
         serializedVersion: 2
-        x: 2475
+        x: 2479
         y: 945
         width: 225
         height: 315
@@ -634,7 +634,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2700
-        y: 630
+        y: 626
         width: 225
         height: 315
       alignment: 0
@@ -651,7 +651,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 6d
+      name: 06d
       rect:
         serializedVersion: 2
         x: 0
@@ -777,7 +777,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7d
+      name: 07d
       rect:
         serializedVersion: 2
         x: 1350
@@ -798,7 +798,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8d
+      name: 08d
       rect:
         serializedVersion: 2
         x: 1575
@@ -1207,16 +1207,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      06d: -2097815076
       10h: -1295392030
       pokercardimage_18: 508897351
-      7d: 598196095
       10d: -1813672246
       12s: 223782233
       pokercardimage_14: -45908235
       09s: 1456712247
       11h: -1283390200
       08h: -1888205454
-      8d: 1045567780
       07s: 401102650
       pokercardimage_4: 1922758626
       pokercardimage_41: -1025696459
@@ -1226,6 +1225,7 @@ TextureImporter:
       09d: -114571175
       06s: -1133835641
       11c: 222658026
+      07d: 598196095
       pokercardimage_16: -1306019401
       pokercardimage_17: 1187832858
       06c: 810842126
@@ -1244,14 +1244,14 @@ TextureImporter:
       12c: -1133065827
       07h: -485039546
       10s: -440698792
-      6d: -2097815076
+      11d: 106415141
       12d: -1578060093
       09h: 1378959343
       13h: -1194462431
-      11d: 106415141
       07c: 615103900
       06h: -1310034768
       pokercardimage_27: -104852963
+      08d: 1045567780
       pokercardimage_5: 1844543184
       12h: 1563092056
       pokercardimage_44: -90956679
