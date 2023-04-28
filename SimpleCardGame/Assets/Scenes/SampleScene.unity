@@ -1021,11 +1021,14 @@ MonoBehaviour:
   card3: {fileID: 913385199}
   card4: {fileID: 782714982}
   card5: {fileID: 1792574973}
+  sr_array:
+  - {fileID: 0}
   my_sprites:
   - {fileID: 222658026, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
   - {fileID: -1133065827, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
   - {fileID: 1507483511, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
   - {fileID: -114571175, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
+  - {fileID: 1378959343, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
   - {fileID: 1378959343, guid: f6add914e385f0c4c8fd5964edc03ea6, type: 3}
 --- !u!4 &1580393405
 Transform:
