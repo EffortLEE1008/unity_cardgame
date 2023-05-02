@@ -1,26 +1,32 @@
-<mxfile host="app.diagrams.net" modified="2023-04-25T10:51:09.995Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="-SwSvpxejGPD3O5hwE8M" version="21.1.9" type="device">
+<mxfile host="app.diagrams.net" modified="2023-05-02T10:52:16.459Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="ar81ZRqQ2QTIaMv8eeZX" version="21.2.4" type="device">
   <diagram name="페이지-1" id="M00KFu75AIdlWuPv9bby">
-    <mxGraphModel dx="847" dy="609" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="837" dy="1962" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="wF_jVjKiOb30Yhi6PBNW-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wF_jVjKiOb30Yhi6PBNW-1" target="wF_jVjKiOb30Yhi6PBNW-2">
+        <mxCell id="wF_jVjKiOb30Yhi6PBNW-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="wF_jVjKiOb30Yhi6PBNW-1" target="wF_jVjKiOb30Yhi6PBNW-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="wF_jVjKiOb30Yhi6PBNW-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;카드를 특정 위치로 움직인다.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="230" y="130" width="320" height="190" as="geometry" />
+        <mxCell id="wF_jVjKiOb30Yhi6PBNW-1" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;카드를 1장 만든다.&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="90" y="-310" width="320" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="wF_jVjKiOb30Yhi6PBNW-2" value="&lt;font style=&quot;font-size: 21px;&quot;&gt;랜덤하게 카드를 뽑는다&lt;/font&gt;." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="230" y="380" width="320" height="170" as="geometry" />
+        <mxCell id="3rcxXEQU6VgTkcZHEePD-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wF_jVjKiOb30Yhi6PBNW-2" target="wF_jVjKiOb30Yhi6PBNW-3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="wF_jVjKiOb30Yhi6PBNW-3" value="&lt;font style=&quot;font-size: 32px;&quot;&gt;배팅한다.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="235" y="630" width="310" height="200" as="geometry" />
+        <mxCell id="3rcxXEQU6VgTkcZHEePD-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wF_jVjKiOb30Yhi6PBNW-2" target="3rcxXEQU6VgTkcZHEePD-4">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="wF_jVjKiOb30Yhi6PBNW-6" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="wF_jVjKiOb30Yhi6PBNW-3">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="389" y="550" as="sourcePoint" />
-            <mxPoint x="439" y="500" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="wF_jVjKiOb30Yhi6PBNW-2" value="&lt;font style=&quot;font-size: 19px;&quot;&gt;카드를 원하는 목표로 이동시킨다.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="90" y="-60" width="320" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="wF_jVjKiOb30Yhi6PBNW-3" value="&lt;span style=&quot;font-size: 24px;&quot;&gt;카드의 이미지를&lt;br&gt;바꾼다.&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="95" y="200" width="310" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="3rcxXEQU6VgTkcZHEePD-4" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;Vector3. MoveToward()&lt;br&gt;rigidbody2d. MovePosition&lt;/font&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="500" y="-150" width="320" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="3rcxXEQU6VgTkcZHEePD-6" value="&lt;span style=&quot;font-size: 23px;&quot;&gt;Sprite Renderer2d = Getcomponent&amp;lt;&amp;gt;()&lt;br&gt;&lt;br&gt;Sprite Rendere2d.sprite = sprite[ 0~ 31]&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="500" y="210" width="320" height="320" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
