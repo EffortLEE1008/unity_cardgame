@@ -1,8 +1,11 @@
 ﻿
-/////////index num[0    1    2    3    4    5    6    7    8    9]
-///////////////////1    2    3    4    5    6    7    8    9   10
-using System.ComponentModel.DataAnnotations;
 
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+
+/////////index num[0    1    2    3    4    5    6    7    8    9]
+///////////////////
 string[] deck = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
                   "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
 
@@ -24,6 +27,7 @@ Dictionary<string, int> jokbo = new Dictionary<string, int>()
 
 };
 
+
 Dictionary<string, int> non_jokbo = new Dictionary<string, int>()
 {
     {"a" , 1 }, {"A",1}, {"b",2}, {"B",2}, {"c", 3}, {"C", 3}, {"d", 4}, {"D", 4}, {"e", 5}, {"E", 5},
@@ -35,56 +39,92 @@ Dictionary<string, int> non_jokbo = new Dictionary<string, int>()
 
 List<string> player0 = new List<string>();
 List<string> computer1 = new List<string>();
+List<string> computer2 = new List<string>();
+List<string> computer3 = new List<string>();
+
+List<string> player_card_list= new List<string>();
+List<int> player_value_list = new List<int>();
 
 player0.Add(deck[9]);
-player0.Add(deck[4]);                   //카드를 두장 뽑는다.
-                                             //ej
+player0.Add(deck[4]);                   
 
 computer1.Add(deck[3]);
 computer1.Add(deck[8]);
 
+computer2.Add(deck[15]);
+computer2.Add(deck[16]);
+
+computer3.Add(deck[17]);
+computer3.Add(deck[2]);
+
 
 player0.Sort();
-
+computer1.Sort();
+computer2.Sort();
+computer3.Sort();
 
 string concat_player0 = player0[0] + player0[1];
 string concat_computer1 = computer1[0] + computer1[1];
-//computer2
-//computer3
-//computer4
+string concat_computer2 = computer2[0] + computer2[1];
+string concat_computer3 = computer3[0] + computer3[1];
 
-int player0_value;
+player_card_list.Add(concat_player0);
+player_card_list.Add(concat_computer1);
+player_card_list.Add(concat_computer2);
+player_card_list.Add(concat_computer3);
 
+//변경하기 플레이어card_list로 변경하기
 
-
-if (jokbo.ContainsKey(concat_player0))            //족보에 있는 지 없는지 비교
+for (int i = 0; i < player_card_list.Count; i++)
 {
+    if (jokbo.ContainsKey(player_card_list[i]))            //족보에 있는 지 없는지 비교
+    {
 
-    player0_value = jokbo[concat_player0];
-    
-    
-    //Console.WriteLine(concat_player0+"존재합니다.");
+        player_value_list.Add(jokbo[player_card_list[i]]);
+
+        //Console.WriteLine(concat_player0+"존재합니다.")
+    }
+    else
+    {
+        player_value_list.Add((non_jokbo[player_card_list[i][0].ToString()] + non_jokbo[player_card_list[i][1].ToString()]) % 10);
+
+
+    }
+
 
 }
-else
+for (int i = 0; i < player_card_list.Count; i++)
 {
-    player0_value = (non_jokbo[player0[0]] + non_jokbo[player0[1]]) %10;
-    
+    Console.WriteLine("player_value_list[" + i+ "]는 " + player_value_list[i]);
+    Console.WriteLine("player_card_list["+ i +"]는 " + player_card_list[i]);
+    Console.WriteLine("");
+}
+
+int max_value = 0;
+int max_index = 0;
+
+for(int i =0;i< player_value_list.Count; i++)
+{
+    if (max_value < player_value_list[i])
+    {
+        max_value = player_value_list[i];
+        max_index = i;
+    }
+
 
 }
 
-Console.WriteLine(player0_value);
+Console.WriteLine("maxvalue는 " + max_value);
+Console.WriteLine("maxindex는 " + max_index);
 
-//to do 비교, 컴퓨터값 넣기
 
 
-if (jokbo.ContainsKey(concat_computer1))            //족보에 있는 지 없는지 비교
-{
 
-    int computer1_value = jokbo[concat_computer1];
 
-    //Console.WriteLine(concat_computer1 + "존재합니다.");
-}
+
+
+
+
 
 
 
