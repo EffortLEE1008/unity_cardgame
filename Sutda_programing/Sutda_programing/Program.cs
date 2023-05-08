@@ -2,10 +2,12 @@
 
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
+using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
 
 /////////index num[0    1    2    3    4    5    6    7    8    9]
-///////////////////
+///////////////////1번  2번  3번  4번  5번  6번  7번  8번  9번   10번
 string[] deck = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
                   "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
 
@@ -34,6 +36,21 @@ Dictionary<string, int> non_jokbo = new Dictionary<string, int>()
     {"f", 6}, {"F", 6}, {"g", 7}, {"G", 7}, {"h", 8}, {"H", 8}, {"i", 9}, {"I", 9}, {"j", 10}, {"J", 10}
 };
 
+List<string> ddang_list = new List<string>()
+{
+    "aA", "bB", "cC", "dD", "eE", "fF", "gG", "hH", "iI", "jJ"
+};
+
+List<string> ddang_killer = new List<string>()
+{
+    "cg", "cG", "Cg", "CG"
+};
+
+List<string> gang_list = new List<string>()
+{
+    "AH", "AC"
+};
+
 //List 사용해서 player0 만들고, 카드 2장 넣어보기.
 
 
@@ -45,17 +62,17 @@ List<string> computer3 = new List<string>();
 List<string> player_card_list= new List<string>();
 List<int> player_value_list = new List<int>();
 
-player0.Add(deck[9]);
-player0.Add(deck[4]);                   
+player0.Add(deck[1]);
+player0.Add(deck[11]);                   
 
-computer1.Add(deck[3]);
-computer1.Add(deck[8]);
+computer1.Add(deck[12]);
+computer1.Add(deck[10]);
 
-computer2.Add(deck[15]);
+computer2.Add(deck[13]);
 computer2.Add(deck[16]);
 
-computer3.Add(deck[17]);
 computer3.Add(deck[2]);
+computer3.Add(deck[6]);
 
 
 player0.Sort();
@@ -93,17 +110,91 @@ for (int i = 0; i < player_card_list.Count; i++)
 
 
 }
+
 for (int i = 0; i < player_card_list.Count; i++)
 {
-    Console.WriteLine("player_value_list[" + i+ "]는 " + player_value_list[i]);
-    Console.WriteLine("player_card_list["+ i +"]는 " + player_card_list[i]);
+    Console.WriteLine("player_value_list[" + i + "]는 " + player_value_list[i]);
+    Console.WriteLine("player_card_list[" + i + "]는 " + player_card_list[i]);
     Console.WriteLine("");
 }
 
+Console.WriteLine("ㅡㅡㅡㅡㅡㅡㅡㅡㅡ값 재부여 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+
+
+bool isDDang = false;
+
+
+for(int i=0; i<player_card_list.Count; i++)
+{
+    Console.WriteLine(i + "현재 위치입니다.");
+    if (ddang_list.Contains(player_card_list[i]))
+    {
+        isDDang = true;
+        Console.WriteLine("존재합니다.");
+        break;
+    }
+
+}
+
+//for (int i = 0; i < player_card_list.Count; i++)
+//{
+//    if (player_value_list[i]>=200 && player_value_list[i] <= 380)
+//    {
+//        isDDang = true;
+//        Console.WriteLine("존재합니다.");
+//        break;
+//    }
+//}
+
+if (isDDang)
+{
+    for(int i=0; i < player_card_list.Count; i++)
+    {
+        if (ddang_killer.Contains(player_card_list[i]))
+        {
+            player_value_list[i] = 400;
+        }
+
+    }
+}
+
+bool isGang = false;
+
+for(int i=0; i< player_card_list.Count; i++)
+{
+    if (gang_list.Contains(player_card_list[i]))
+    {
+        isGang= true;
+        break;
+    }
+
+}
+
+if (isGang)
+{
+    for(int i =0; i < player_card_list.Count; i++)
+    {
+        if (player_card_list[i] == "DG")
+        {
+            player_value_list[i] = 1500;
+        }
+
+    }
+}
+
+
+
+
+for (int i = 0; i < player_card_list.Count; i++)
+{
+    Console.WriteLine("player_value_list[" + i + "]는 " + player_value_list[i]);
+    Console.WriteLine("player_card_list[" + i + "]는 " + player_card_list[i]);
+    Console.WriteLine("");
+}
 int max_value = 0;
 int max_index = 0;
 
-for(int i =0;i< player_value_list.Count; i++)
+for (int i = 0; i < player_value_list.Count; i++)
 {
     if (max_value < player_value_list[i])
     {
@@ -113,9 +204,10 @@ for(int i =0;i< player_value_list.Count; i++)
 
 
 }
-
+Console.WriteLine("");
 Console.WriteLine("maxvalue는 " + max_value);
 Console.WriteLine("maxindex는 " + max_index);
+
 
 
 
