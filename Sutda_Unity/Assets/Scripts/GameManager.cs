@@ -23,12 +23,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        for (int i = 0; i < card.Length; i++)
-        {
-            card[i].transform.position = Vector3.MoveTowards(card[i].transform.position,
-                                target[i].transform.position, 3 * Time.deltaTime);
 
-        }
 
 
 
@@ -36,15 +31,18 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
-        //to do 작성
-        //StartCoroutine(MoveCard( ));       
+        for (int i = 0; i < card.Length; i++)
+        {
+            StartCoroutine(MoveCard(card[i], target[i]));
+        }
+           
  
     }
 
     IEnumerator MoveCard(GameObject my_card, GameObject goal)//GameObject my_card, GameObject goal
     {
 
-        while (timer <= 5)
+        while (timer <= 20)
         {
             timer = timer + Time.deltaTime;
             my_card.transform.position = Vector3.MoveTowards(my_card.transform.position, goal.transform.position,
@@ -52,11 +50,8 @@ public class GameManager : MonoBehaviour
 
             yield return null;
         }
-        if (timer >= 5)
-        {
-            Debug.Log("timer가 5를 넘겼습니다.");
-        }
 
+        Debug.Log("코르틴 종료");
 
     }
 
