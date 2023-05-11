@@ -551,6 +551,8 @@ MonoBehaviour:
   - {fileID: 1790310424, guid: 001bb0dff37aa0142872c63052e43dec, type: 3}
   - {fileID: 1906048687, guid: 001bb0dff37aa0142872c63052e43dec, type: 3}
   - {fileID: -1783822572, guid: 001bb0dff37aa0142872c63052e43dec, type: 3}
+  player_card_list: []
+  player_value_list: 
 --- !u!4 &502540338
 Transform:
   m_ObjectHideFlags: 0
@@ -854,7 +856,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 502540337}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: CardRotate
+        m_MethodName: Batting
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -11,15 +11,19 @@ public class GameManager : MonoBehaviour
 
     public Sprite[] my_sprite;
     bool isstart=true;
+    bool isbatting = true;
 
     SpriteRenderer[] card_info = new SpriteRenderer[8];
 
     float timer = 0;
 
-    public List<string> player0 = new List<string>();
-    public List<string> computer1 = new List<string>();
-    public List<string> computer2 = new List<string>();
-    public List<string> computer3 = new List<string>();
+    List<string> player0 = new List<string>();
+    List<string> computer1 = new List<string>();
+    List<string> computer2 = new List<string>();
+    List<string> computer3 = new List<string>();
+
+    public List<string> player_card_list = new List<string>();
+    public List<int> player_value_list = new List<int>();
 
     void Start()
     {
@@ -35,16 +39,12 @@ public class GameManager : MonoBehaviour
         card_info[2].sprite = my_sprite[2];
         card_info[3].sprite = my_sprite[6];
 
-        card_info[4].sprite = my_sprite[8];
-        card_info[5].sprite = my_sprite[7];
+        card_info[4].sprite = my_sprite[13];
+        card_info[5].sprite = my_sprite[16];
 
-        card_info[6].sprite = my_sprite[9];
+        card_info[6].sprite = my_sprite[12];
         card_info[7].sprite = my_sprite[10];
 
-        Debug.Log(card_info[1].sprite.name.GetType());
-
-        
- 
     }
 
     // Update is called once per frame
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     {
         if (isstart)
         {
-            Debug.Log("start°¡ ´­·È¾î¿ä");
+            
             isstart = false;
             for (int i = 0; i < card.Length; i++)
             {
@@ -89,26 +89,100 @@ public class GameManager : MonoBehaviour
 
     public void Batting()
     {
-        player0.Add(card_info[0].sprite.name);
-        player0.Add(card_info[1].sprite.name);
-        player0.Sort();
+        if (isbatting)
+        {
+            isbatting = false;
 
-        computer1.Add(card_info[2].sprite.name);
-        computer1.Add(card_info[3].sprite.name);
-        computer1.Sort();
+            player0.Add(card_info[0].sprite.name);
+            player0.Add(card_info[1].sprite.name);
+            player0.Sort();
 
-        computer2.Add(card_info[4].sprite.name);
-        computer2.Add(card_info[5].sprite.name);
-        computer2.Sort();
+            computer1.Add(card_info[2].sprite.name);
+            computer1.Add(card_info[3].sprite.name);
+            computer1.Sort();
 
-        computer3.Add(card_info[6].sprite.name);
-        computer3.Add(card_info[7].sprite.name);
-        computer3.Sort();
+            computer2.Add(card_info[4].sprite.name);
+            computer2.Add(card_info[5].sprite.name);
+            computer2.Sort();
 
-  
-        
+            computer3.Add(card_info[6].sprite.name);
+            computer3.Add(card_info[7].sprite.name);
+            computer3.Sort();
+
+            player_card_list.Add(player0[0] + player0[1]); // bB
+            player_card_list.Add(computer1[0] + computer1[1]);
+            player_card_list.Add(computer2[0] + computer2[1]);
+            player_card_list.Add(computer3[0] + computer3[1]);
+
+            for (int i = 0; i <player_card_list.Count; i++)
+            {
+                if (jokbo.ContainsKey(player_card_list[i]))// true false
+                {
+                    player_value_list.Add(jokbo[player_card_list[i]]);
+                }
+                else
+                {
+                    player_value_list.Add((not_in_jokbo[player_card_list[i][0].ToString()] +
+                                          not_in_jokbo[player_card_list[i][1].ToString()]) % 10);              
+                }
+
+            }
+
+            bool isDDang = false;
+            for (int i = 0; i <player_card_list.Count; i++)
+            {
+                if (ddang_list.Contains(player_card_list[i]))
+                {
+                    isDDang = true;
+                    break;
+                }
+
+            }
+
+            if (isDDang)
+            {
+                for (int i = 0; i < player_card_list.Count; i++)
+                {
+                    if (ddangkiller_list.Contains(player_card_list[i]))
+                    {
+                        player_value_list[i] = 400;
+                    }
+
+                }
+                
+            }
+
+            bool isGyangDDang = false;
+
+            for (int i = 0; i < player_card_list.Count; i++)
+            {
+                if (gyangddang_list.Contains(player_card_list[i]))
+                {
+                    isGyangDDang = true;
+                    break;
+                }
+
+            }
+
+            if (isGyangDDang)
+            {
+                for (int i = 0; i < player_card_list.Count; i++)
+                {
+                    if (player_card_list[i] == "DG")
+                    {
+                        player_value_list[i] = 1800;
+                    }
+
+                }
+
+            }
 
 
+
+
+
+
+        }
     }
 
     IEnumerator MoveCard(GameObject my_card, GameObject goal)//GameObject my_card, GameObject goal
@@ -165,10 +239,6 @@ public class GameManager : MonoBehaviour
             {
                 "AC", "AH"
             };
-
-
-
-
 
 
 
