@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
 
     float timer = 0;
 
+    List<string> player0 = new List<string>();
+    List<string> computer1 = new List<string>();
+    List<string> computer2 = new List<string>();
+    List<string> computer3 = new List<string>();
+
     void Start()
     {
         
@@ -84,7 +89,8 @@ public class GameManager : MonoBehaviour
 
     public void Batting()
     {
-
+        player0.Add(card_info[0].sprite.name + card_info[1].sprite.name);
+        Debug.Log(player0[0]);
 
 
 
