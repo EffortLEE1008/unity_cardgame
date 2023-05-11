@@ -16,10 +16,10 @@ public class GameManager : MonoBehaviour
 
     float timer = 0;
 
-    List<string> player0 = new List<string>();
-    List<string> computer1 = new List<string>();
-    List<string> computer2 = new List<string>();
-    List<string> computer3 = new List<string>();
+    public List<string> player0 = new List<string>();
+    public List<string> computer1 = new List<string>();
+    public List<string> computer2 = new List<string>();
+    public List<string> computer3 = new List<string>();
 
     void Start()
     {
@@ -89,10 +89,24 @@ public class GameManager : MonoBehaviour
 
     public void Batting()
     {
-        player0.Add(card_info[0].sprite.name + card_info[1].sprite.name);
-        Debug.Log(player0[0]);
+        player0.Add(card_info[0].sprite.name);
+        player0.Add(card_info[1].sprite.name);
+        player0.Sort();
 
+        computer1.Add(card_info[2].sprite.name);
+        computer1.Add(card_info[3].sprite.name);
+        computer1.Sort();
 
+        computer2.Add(card_info[4].sprite.name);
+        computer2.Add(card_info[5].sprite.name);
+        computer2.Sort();
+
+        computer3.Add(card_info[6].sprite.name);
+        computer3.Add(card_info[7].sprite.name);
+        computer3.Sort();
+
+  
+        
 
 
     }
