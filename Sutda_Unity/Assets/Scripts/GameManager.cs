@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] target;
 
     public Sprite[] my_sprite;
+    public Sprite[] tmp_sprite;
     SpriteRenderer[] card_info = new SpriteRenderer[8];
 
 
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     float timer = 0;
 
     public Text info_text;
+    public Text info_text2;
 
     List<string> player0 = new List<string>();
     List<string> computer1 = new List<string>();
@@ -28,27 +30,42 @@ public class GameManager : MonoBehaviour
 
     public List<string> player_card_list = new List<string>();
     public List<int> player_value_list = new List<int>();
+    public List<string> player_stringValue_list = new List<string>();
+    
 
     void Start()
     {
         info_text.text = "게임시작";
-        
+        info_text2.text = "";
+
         for (int i = 0; i < card_info.Length; i++)
         {
             card_info[i] = card[i].GetComponent<SpriteRenderer>();
         }
+        tmp_sprite[0] = my_sprite[11];
+        tmp_sprite[1] = my_sprite[1];
 
-        card_info[0].sprite = my_sprite[11];
-        card_info[1].sprite = my_sprite[1];
+        tmp_sprite[2] = my_sprite[2];
+        tmp_sprite[3] = my_sprite[6];
 
-        card_info[2].sprite = my_sprite[2];
-        card_info[3].sprite = my_sprite[6];
+        tmp_sprite[4] = my_sprite[13];
+        tmp_sprite[5] = my_sprite[16];
 
-        card_info[4].sprite = my_sprite[13];
-        card_info[5].sprite = my_sprite[16];
+        tmp_sprite[6] = my_sprite[12];
+        tmp_sprite[7] = my_sprite[10];
 
-        card_info[6].sprite = my_sprite[12];
-        card_info[7].sprite = my_sprite[10];
+
+        card_info[0].sprite = tmp_sprite[0];
+        card_info[1].sprite = tmp_sprite[1];
+
+        card_info[2].sprite = tmp_sprite[2];
+        //card_info[3].sprite = my_sprite[6];
+
+        card_info[4].sprite = tmp_sprite[4];
+        //card_info[5].sprite = my_sprite[16];
+
+        card_info[6].sprite = tmp_sprite[6];
+        //card_info[7].sprite = my_sprite[10];
 
     }
 
@@ -109,6 +126,8 @@ public class GameManager : MonoBehaviour
                 info_text.text = not_in_jokbo_string[player_value_list[0]];
                 
             }
+
+            info_text2.text = "배팅하시겠습니까?";
         }      
     }
     public void CardRotate() 
@@ -123,6 +142,10 @@ public class GameManager : MonoBehaviour
     {
         if (isbatting)
         {
+            card_info[3].sprite = tmp_sprite[3];
+            card_info[5].sprite = tmp_sprite[5];
+            card_info[7].sprite = tmp_sprite[7];
+
             isbatting = false;
 
             player0.Add(card_info[0].sprite.name);
@@ -158,6 +181,20 @@ public class GameManager : MonoBehaviour
                 }
 
             }
+            //string값으로 list에 추가
+            for (int i = 0; i < player_card_list.Count; i++)
+            {
+                if (jokbo_string.ContainsKey(player_card_list[i]))
+                {
+                    player_stringValue_list.Add(jokbo_string[player_card_list[i]]);
+                }
+                else
+                {
+                    player_stringValue_list.Add(not_in_jokbo_string[player_value_list[i]]);
+                }
+
+            }
+
 
             bool isDDang = false;
             for (int i = 0; i <player_card_list.Count; i++)
@@ -208,6 +245,22 @@ public class GameManager : MonoBehaviour
 
             }
 
+            int max = 0;
+            int max_index = 0;
+
+            for (int i = 0; i < player_value_list.Count; i++)
+            {
+                if (max < player_value_list[i])
+                {
+                    max = player_value_list[i];
+                    max_index = i;
+                }
+
+            }
+
+            info_text.text = "player" + max_index + "가 " + player_stringValue_list[max_index] + " 로 우승했습니다.";
+            info_text2.text = "player" + max_index + "우승했습니다.";
+
 
 
         }
@@ -226,12 +279,6 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("코르틴 종료");
-
-        int a = 10;
-
-        int tmp = a;
-
-        int c = tmp;
 
     }
 
