@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,12 +11,15 @@ public class GameManager : MonoBehaviour
     public GameObject[] target;
 
     public Sprite[] my_sprite;
-    bool isstart=true;
-    bool isbatting = true;
-
     SpriteRenderer[] card_info = new SpriteRenderer[8];
 
+
+    bool isstart = true;
+    bool isbatting = true;
+
     float timer = 0;
+
+    public Text info_text;
 
     List<string> player0 = new List<string>();
     List<string> computer1 = new List<string>();
@@ -27,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        info_text.text = "°ÔÀÓ½ÃÀÛ";
         
         for (int i = 0; i < card_info.Length; i++)
         {
@@ -57,7 +62,23 @@ public class GameManager : MonoBehaviour
     {
         if (isstart)
         {
-            
+
+            player0.Add(card_info[0].sprite.name);
+            player0.Add(card_info[1].sprite.name);
+            player0.Sort();
+
+            player_card_list.Add(player0[0] + player0[1]); // bB
+
+            if (jokbo.ContainsKey(player_card_list[0]))// true false
+            {
+                player_value_list.Add(jokbo[player_card_list[0]]);
+            }
+            else
+            {
+                player_value_list.Add((not_in_jokbo[player_card_list[0][0].ToString()] +
+                                      not_in_jokbo[player_card_list[0][1].ToString()]) % 10);
+            }
+
             isstart = false;
             for (int i = 0; i < card.Length; i++)
             {
@@ -76,6 +97,17 @@ public class GameManager : MonoBehaviour
                 {
                     card[i].transform.Rotate(Vector3.back * 270);
                 }
+            }
+
+            if (jokbo_string.ContainsKey(player_card_list[0]))
+            {
+                info_text.text = jokbo_string[player_card_list[0]];
+
+            }
+            else
+            {
+                info_text.text = not_in_jokbo_string[player_value_list[0]];
+                
             }
         }      
     }
@@ -109,12 +141,11 @@ public class GameManager : MonoBehaviour
             computer3.Add(card_info[7].sprite.name);
             computer3.Sort();
 
-            player_card_list.Add(player0[0] + player0[1]); // bB
             player_card_list.Add(computer1[0] + computer1[1]);
             player_card_list.Add(computer2[0] + computer2[1]);
             player_card_list.Add(computer3[0] + computer3[1]);
 
-            for (int i = 0; i <player_card_list.Count; i++)
+            for (int i = 1; i <player_card_list.Count; i++)
             {
                 if (jokbo.ContainsKey(player_card_list[i]))// true false
                 {
@@ -179,9 +210,6 @@ public class GameManager : MonoBehaviour
 
 
 
-
-
-
         }
     }
 
@@ -199,12 +227,18 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("ÄÚ¸£Æ¾ Á¾·á");
 
+        int a = 10;
+
+        int tmp = a;
+
+        int c = tmp;
+
     }
 
     Dictionary<string, int> jokbo = new Dictionary<string, int>()
             {
 
-                {"aA",200 }, {"bB", 220 }, {"cC", 240 }, {"dD", 260 }, {"eE", 280 }, {"fF", 300 },
+                {"aA", 200 }, {"bB", 220 }, {"cC", 240 }, {"dD", 260 }, {"eE", 280 }, {"fF", 300 },
                 {"gG", 320 }, {"hH", 340 }, {"iI", 360 }, {"jJ", 380 },
 
                 {"df", 40 }, {"dF", 40 }, {"Df", 40 }, {"DF", 40 }, //¼¼·ú
@@ -217,6 +251,35 @@ public class GameManager : MonoBehaviour
                 {"AC", 1300 }, {"AH", 1300 }, {"CH", 3800 } //±¤¶¯
 
             };
+
+    Dictionary<string, string> jokbo_string = new Dictionary<string, string>()
+    {
+
+            {"aA","ÀÏ¶¯" }, {"bB", "ÀÌ¶¯" }, {"cC", "»ï¶¯" }, {"dD", "»ç¶¯" }, {"eE", "¿À¶¯" }, {"fF", "À°¶¯" },
+            {"gG", "Ä¥¶¯" }, {"hH", "ÆÈ¶¯" }, {"iI", "±¸¶¯" }, {"jJ", "½Ê¶¯" },
+
+            {"df", "¼¼·ú" }, {"dF", "¼¼·ú" }, {"Df", "¼¼·ú" }, {"DF", "¼¼·ú" }, //¼¼·ú
+            {"ai", "±¸»æ" }, {"aI", "±¸»æ" }, {"Ai", "±¸»æ" }, {"AI", "±¸»æ" }, //±¸»æ
+            {"dj", "Àå»ç" }, {"dJ", "Àå»ç" }, {"Dj", "Àå»ç" }, {"DJ", "Àå»ç" }, //Àå»ç
+            {"ad", "µ¶»ç" }, {"aD", "µ¶»ç" }, {"Ad", "µ¶»ç" }, {"AD", "µ¶»ç" }, //µ¶»ç
+            {"aj", "Àå»æ" }, {"aJ", "Àå»æ" }, {"Aj", "Àå»æ" }, {"AJ", "Àå»æ" }, //Àå»æ
+            {"ab", "¾Ë¸®" }, {"aB", "¾Ë¸®" }, {"Ab", "¾Ë¸®" }, {"AB", "¾Ë¸®" }, //¾Ë¸®
+
+            {"AC", "ÀÏ»ï±¤¶¯" }, {"AH", "ÀÏÆÈ±¤¶¯" }, {"CH", "»ïÆÈ±¤¶¯" }, //±¤¶¯
+
+            {"cg", "¶¯ÀâÀÌ or ¸ÁÅë" }, {"Cg", "¶¯ÀâÀÌ or ¸ÁÅë" }, {"cG", "¶¯ÀâÀÌ or ¸ÁÅë" },
+            {"CG", "¶¯ÀâÀÌ or ¸ÁÅë" },
+
+            {"DG", "¾ÏÇà¾î»ç or ÀÏ²ý" }
+
+    };
+
+    Dictionary<int, string> not_in_jokbo_string = new Dictionary<int, string>()
+    {
+        {0, "¸ÁÅë" }, {1, "ÀÏ²ý" }, {2, "µÎ²ý" }, {3, "¼¼²ý" }, {4, "³×²ý" }, {5, "´Ù¼¸²ý" },
+        {6, "¿©¼¸²ý" }, {7, "ÀÏ°ö²ý" }, {8, "¿©´ü²ý" }, {9, "°©¿À" }
+
+    };
 
     Dictionary<string, int> not_in_jokbo = new Dictionary<string, int>()
             {
